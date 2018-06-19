@@ -96,7 +96,7 @@
         <activity android:name=".activities.RapidFireGame"/>
         <activity android:name=".activities.MedicineStore"/>
         <activity android:name=".activities.NewHomeActivity"/>
-        <activity android:name=".activities.UserProfile"
+        <activity android:name=".ui.userprofile.UserProfileActivity"
             android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".activities.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
@@ -117,14 +117,14 @@
             android:enabled="true" />
         <receiver android:name=".reciever.TripAlarmReceiver" />
 
-        <receiver android:name=".widget.TripAppWidgetProvider" >
+        <receiver android:name=".code.widget.TripAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_info" />
         </receiver>
-        <receiver android:name=".widget.MedicineStatusWidgetProvider" >
+        <receiver android:name=".code.widget.MedicineStatusWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

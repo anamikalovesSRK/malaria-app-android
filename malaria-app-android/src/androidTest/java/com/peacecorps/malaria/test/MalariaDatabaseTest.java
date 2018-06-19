@@ -3,7 +3,7 @@ package com.peacecorps.malaria.test;
 import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
 
-import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
+import com.peacecorps.malaria.data.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
 
 import java.text.ParseException;

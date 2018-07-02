@@ -1,6 +1,9 @@
 package com.peacecorps.malaria.ui.base;
 
-import android.arch.lifecycle.Lifecycle;
+/**
+ * Every presenter in the app must either implement this interface or extend BasePresenter
+ * indicating the MvpView type that wants to be attached with.
+ */
 
 public interface MvpPresenter <V extends MvpView> {
 
@@ -14,17 +17,4 @@ public interface MvpPresenter <V extends MvpView> {
      * called when view is detached from presenter
      */
     void detachView();
-
-    /**
-     * method to check if the view is attached or not
-     * @return true if attached
-     */
-    boolean isViewAttached();
-
-    /**
-     * Used to generate any data before the presenter is called
-     */
-    void init();
-
-    V getView();
 }

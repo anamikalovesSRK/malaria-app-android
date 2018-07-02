@@ -53,8 +53,4 @@ public abstract class BaseFragment<P extends MvpPresenter> extends Fragment impl
 
     protected abstract void init(View view, @Nullable Bundle savedInstanceState);
 
-    void displayToastMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
-    }
-
 }

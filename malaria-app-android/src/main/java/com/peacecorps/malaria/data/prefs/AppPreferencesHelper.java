@@ -3,12 +3,16 @@ package com.peacecorps.malaria.data.prefs;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.peacecorps.malaria.ui.base.MvpPresenter;
+
 public class AppPreferencesHelper implements PreferencesHelper{
 
     private static final String PREF_KEY_USER_PREFERENCES = "HAS_USER_SET_PREFERENCES";
+    private static final String PREF_KEY_IS_FIRST_RUN = "IS_FIRST_RUN";
     private static final String PREF_KEY_USER_SCORE = "USER_SCORE";
     private static final String PREF_KEY_GAME_SCORE = "GAME_SCORE";
     private static final String PREF_KEY_DRUG_PICKED = "com_peacecorps_malaria_drugPicked";
+    private static final String PREF_KEY_IS_DRUG_TAKEN = "com_peacecorps_malaria_is_drug_taken";
     private static final String PREF_KEY_FIRST_RUN_TIME = "com_peacecorps_malaria_firstRunTime";
     private static final String PREF_KEY_DRUG_ACCEPTED_COUNTED = "com_peacecorps_malaria_drugAcceptedCount";
     private static final String PREF_KEY_IS_WEEKLY = "com_peacecorps_malaria_isWeekly";
@@ -62,7 +66,7 @@ public class AppPreferencesHelper implements PreferencesHelper{
 
     @Override
     public String getDrugPicked() {
-        return mPrefs.getString(PREF_KEY_DRUG_PICKED,null);
+        return mPrefs.getString(PREF_KEY_DRUG_PICKED,"");
     }
 
     @Override
@@ -73,6 +77,16 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public long getFirstRunTime() {
         return mPrefs.getLong(PREF_KEY_FIRST_RUN_TIME, 0 );
+    }
+
+    @Override
+    public boolean isFirstRun() {
+        return mPrefs.getBoolean(PREF_KEY_IS_FIRST_RUN, true);
+    }
+
+    @Override
+    public void setFirstRun(boolean val) {
+        mPrefs.edit().putBoolean(PREF_KEY_IS_FIRST_RUN, val).apply();
     }
 
     @Override
@@ -220,5 +234,15 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public void setUserAge(int age) {
         mPrefs.edit().putInt(PREF_KEY_USER_AGE, age).apply();
+    }
+
+    @Override
+    public boolean isDrugTaken() {
+        return mPrefs.getBoolean(PREF_KEY_IS_DRUG_TAKEN, false);
+    }
+
+    @Override
+    public void setDrugTaken(boolean value) {
+        mPrefs.edit().putBoolean(PREF_KEY_IS_DRUG_TAKEN, value).apply();
     }
 }

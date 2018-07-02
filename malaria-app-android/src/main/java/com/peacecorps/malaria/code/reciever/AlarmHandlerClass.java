@@ -33,8 +33,9 @@ public class AlarmHandlerClass extends BroadcastReceiver {
                 PowerManager.PARTIAL_WAKE_LOCK, "");
         wakeLock.acquire();
 
+        //Todo solve it later, getting error here
         /**Shows the notification with Taken, Snooze and Not Taken Button**/
-        new DrugReminderNotification(context);
+       // new DrugReminderNotification(context);
         wakeLock.release();
     }
 

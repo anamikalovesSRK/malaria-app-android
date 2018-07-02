@@ -22,20 +22,25 @@ android {
             debuggable true
         }
     }
-
 }
-
 dependencies {
-    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion" // v4
-    implementation "com.viewpagerindicator:library:$rootProject.ext.viewPagerIndicatorVersion"
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v4'
+    }
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+
     implementation files('libs/volleylib.jar')
     implementation files('libs/GraphView-3.1.2.jar')
-    testImplementation 'junit:junit:4.12'
     //Room
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    // View pager indicator
+    implementation ("com.github.JakeWharton:ViewPagerIndicator:$rootProject.ext.viewPagerIndicatorVersion") {
+        exclude group: "com.android.support"
+    }
     //Butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation ('com.jakewharton:butterknife:8.8.1') {
+        exclude group: "com.android.support"
+    }
 }

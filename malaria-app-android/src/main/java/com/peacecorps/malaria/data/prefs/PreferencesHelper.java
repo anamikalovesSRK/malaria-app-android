@@ -10,6 +10,8 @@ public interface PreferencesHelper {
     String getDrugPicked();
     void setDrugPicked(String drug);
     long getFirstRunTime();
+    boolean isFirstRun();
+    void setFirstRun(boolean val);
     void setFirstRunTime(long value);
     int getDrugAcceptedCount();
     void setDrugAcceptedCount(int value);
@@ -39,4 +41,6 @@ public interface PreferencesHelper {
     void setUserName(String name);
     void setUserEmail(String email);
     void setUserAge(int age);
+    boolean isDrugTaken();
+    void setDrugTaken(boolean value);
 }

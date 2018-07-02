@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.adapter.DrugArrayAdapter;
+import com.peacecorps.malaria.ui.user_medicine_setting.DrugArrayAdapter;
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 

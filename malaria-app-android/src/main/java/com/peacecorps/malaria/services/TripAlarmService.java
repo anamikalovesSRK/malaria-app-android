@@ -41,16 +41,17 @@ public class TripAlarmService extends IntentService {
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 activIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Builder alamNotificationBuilder = new NotificationCompat.Builder(
-                this).setContentTitle("Upcoming Trip Reminder").setSmallIcon(R.drawable.appicon_themed)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
-                .setContentText(msg)
-                .addAction(R.drawable.checked, "Trip Checklist", contentIntent)
-                .setOngoing(true);
-
-
-        //alamNotificationBuilder.setContentIntent(contentIntent);
-        alarmNotificationManager.notify(1, alamNotificationBuilder.build());
+        //Todo commented out now, due to error, need to solve later
+//        NotificationCompat.Builder alamNotificationBuilder = new NotificationCompat.Builder(
+//                this).setContentTitle("Upcoming Trip Reminder").setSmallIcon(R.drawable.appicon_themed)
+//                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
+//                .setContentText(msg)
+//                .addAction(R.drawable.checked, "Trip Checklist", contentIntent)
+//                .setOngoing(true);
+//
+//
+//        //alamNotificationBuilder.setContentIntent(contentIntent);
+//        alarmNotificationManager.notify(1, alamNotificationBuilder.build());
         Log.d("TripAlarmService", "Notification sent.");
     }
 }

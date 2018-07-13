@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
-import com.peacecorps.malaria.ui.home_screen.MainActivity;
 import com.peacecorps.malaria.ui.user_medicine_setting.MedicineSettingsActivity;
 
 /**
@@ -20,11 +19,11 @@ import com.peacecorps.malaria.ui.user_medicine_setting.MedicineSettingsActivity;
  */
 public class InfoHubFragmentActivity extends FragmentActivity {
 
-    Button homeIconButton, btnPeaceCorpsPolicy, btnPercentSideEffects, btnSideEffectsPCV,
-            btnSideEffectsNPCV, btnVolunteerAdherence, btnEffectiveness,btnTripIndicator,btnSettings ,tempButton, userProfile;
+    Button  btnPeaceCorpsPolicy, btnPercentSideEffects, btnSideEffectsPCV,
+            btnSideEffectsNPCV, btnVolunteerAdherence, btnEffectiveness;
     TextView ihLabel;
 
-        private Dialog dialog = null;
+    private Dialog dialog = null;
     static SharedPreferenceStore mSharedPreferenceStore;
 
     //TextView internetIsConnected;
@@ -35,27 +34,17 @@ public class InfoHubFragmentActivity extends FragmentActivity {
         setContentView(R.layout.info_hub_screen);
 
         /**Declaring Views**/
-        ihLabel= (TextView)findViewById(R.id.ih);
-        homeIconButton = (Button) findViewById(R.id.homeButton);
-        btnTripIndicator = (Button) findViewById(R.id.tripButton);
-        btnPeaceCorpsPolicy = (Button) findViewById(R.id.btnPeaceCorpsPolicy);
-        btnPercentSideEffects = (Button) findViewById(R.id.btnPercentSideEffects);
-        btnSideEffectsPCV = (Button) findViewById(R.id.btnSideEffectsPCV);
-        btnSideEffectsNPCV = (Button) findViewById(R.id.btnSideEffectsNPCV);
-        btnVolunteerAdherence = (Button) findViewById(R.id.btnVolunteerAdherence);
-        btnEffectiveness = (Button) findViewById(R.id.btnEffectiveness);
-        btnSettings = (Button)findViewById(R.id.info_hub_settings_button);
-        tempButton =(Button)findViewById(R.id.tempButton);
-        userProfile =(Button)findViewById(R.id.userProfile);
+//        ihLabel= (TextView)findViewById(R.id.ih);
 
-        //yatna
-        tempButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplication().getApplicationContext(), NewHomeActivity.class));
-                finish();
-            }
-        });
+
+
+        btnPeaceCorpsPolicy = (Button) findViewById(R.id.btn_peace_corps_policy);
+        btnPercentSideEffects = (Button) findViewById(R.id.btn_percent_side_effects);
+        btnSideEffectsPCV = (Button) findViewById(R.id.btn_side_effects_pcv);
+        btnSideEffectsNPCV = (Button) findViewById(R.id.btn_side_effects_non_pcv);
+        btnVolunteerAdherence = (Button) findViewById(R.id.btn_volunteer_adherence);
+        btnEffectiveness = (Button) findViewById(R.id.btn_effectiveness);
+
 
         /**Setting fonts**/
         Typeface cf = Typeface.createFromAsset(getAssets(),"fonts/garreg.ttf");
@@ -67,23 +56,6 @@ public class InfoHubFragmentActivity extends FragmentActivity {
 
 
     public void addListeners() {
-
-        /**Calling Each of the Posts by 6 different buttons**/
-        homeIconButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
-                finish();
-            }
-        });
-
-        btnTripIndicator.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplication().getApplicationContext(), TripIndicatorFragmentActivity.class));
-                finish();
-            }
-        });
 
         btnPeaceCorpsPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,13 +99,13 @@ public class InfoHubFragmentActivity extends FragmentActivity {
             }
         });
 
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                addDialog();
-            }
-        });
+//        btnSettings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                addDialog();
+//            }
+//        });
 
     }
 
@@ -155,7 +127,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
         dialog.setTitle("Reset Data");
 
        // final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
-        Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
+        Button btnOK = (Button) dialog.findViewById(R.id.btn_dialog_reset_okay);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,7 +159,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
             }
         });
 
-        Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);
+        Button btnCancel = (Button) dialog.findViewById(R.id.btn_dialog_reset_cancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

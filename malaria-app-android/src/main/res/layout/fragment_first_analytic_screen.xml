@@ -47,7 +47,7 @@
                     android:paddingRight="@dimen/padding_3dp"
                     android:text="@string/first_analytic_screen_medicine_last_taken_text"
                     android:textSize="@dimen/text_size_20sp"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     android:id="@+id/mlt"
                     />
 
@@ -87,7 +87,7 @@
                     android:paddingRight="@dimen/padding_3dp"
                     android:text="@string/first_analytic_screen_doses_missing_text"
                     android:textSize="@dimen/text_size_20sp"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     android:id="@+id/dinr"
                     />
 
@@ -126,7 +126,7 @@
                     android:paddingRight="@dimen/padding_3dp"
                     android:text="@string/first_analytic_screen_medicine_adherence_to_medicine_text"
                     android:textSize="@dimen/text_size_20sp"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     android:id="@+id/atm"
                     />
 

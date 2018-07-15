@@ -26,7 +26,7 @@
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
                 android:text="SET REMINDER TONE"
-                android:textColor="@color/golden_brown"
+                android:textColor="@color/text_color_primary"
                 android:textSize="@dimen/text_size_20sp"/>
 
         </LinearLayout>
@@ -47,7 +47,7 @@
                 android:layout_marginTop="@dimen/margin_15dp"
                 android:layout_weight="10"
                 android:hint="Specify file path"
-                android:textColor="@color/golden_brown"
+                android:textColor="@color/text_color_primary"
                 android:textColorHint="@color/gray"
                 android:textSize="@dimen/text_size_15sp" />
 

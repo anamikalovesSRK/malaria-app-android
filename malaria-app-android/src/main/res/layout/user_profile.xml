@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/background"
+    android:background="@color/windowBackground"
     android:orientation="vertical"
     android:id="@+id/user_medicine_settings_activity_container"
     tools:context=".ui.user_profile.UserProfileFragment">
@@ -48,9 +48,9 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    style="@style/UserProfileCommonTextAppearance"
+                    style="@style/UserProfileCommonLabelAppearance"
                     android:text="@string/label_user_name"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     />
 
                 <EditText
@@ -71,9 +71,9 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    style="@style/UserProfileCommonTextAppearance"
+                    style="@style/UserProfileCommonLabelAppearance"
                     android:text="@string/label_user_email"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     />
 
                 <EditText
@@ -94,9 +94,9 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    style="@style/UserProfileCommonTextAppearance"
+                    style="@style/UserProfileCommonLabelAppearance"
                     android:text="@string/label_user_age"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     />
 
                 <EditText
@@ -117,9 +117,9 @@
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    style="@style/UserProfileCommonTextAppearance"
+                    style="@style/UserProfileCommonLabelAppearance"
                     android:text="@string/label_medication_type"
-                    android:textColor="@color/golden_brown"
+                    android:textColor="@color/text_color_primary"
                     />
 
                 <EditText
@@ -133,7 +133,7 @@
         </LinearLayout>
         <Button
             android:id="@+id/save_button"
-            style="@style/UserProfileCommonTextAppearance"
+            style="@style/UserProfileCommonLabelAppearance"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_15dp"
             android:layout_marginBottom="@dimen/margin_10dp"
@@ -141,7 +141,7 @@
             android:textColor="@color/white"
             android:paddingLeft="@dimen/padding_40dp"
             android:paddingRight="@dimen/padding_40dp"
-            android:background="@color/golden_brown"
+            android:background="@color/text_color_primary"
             />
     </LinearLayout>
 

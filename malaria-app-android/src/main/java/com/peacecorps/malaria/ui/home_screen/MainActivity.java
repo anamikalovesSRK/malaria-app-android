@@ -10,10 +10,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.code.fragment.HomeScreenFragment;
 import com.peacecorps.malaria.data.AppDataManager;
+import com.peacecorps.malaria.ui.CheckFragment;
 import com.peacecorps.malaria.ui.base.BaseActivity;
 import com.peacecorps.malaria.ui.user_profile.UserProfileFragment;
 import com.peacecorps.malaria.utils.BottomNavigationViewHelper;

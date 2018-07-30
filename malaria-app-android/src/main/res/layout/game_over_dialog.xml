@@ -40,7 +40,7 @@
                 android:gravity="center"
                 android:text="@string/description_wait_for_new_ques"
                 android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_15sp" />
+                android:textSize="@dimen/text_size_16sp" />
 
         </LinearLayout>
 

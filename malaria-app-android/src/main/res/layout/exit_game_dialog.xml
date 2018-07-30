@@ -43,7 +43,7 @@
                 android:gravity="center"
                 android:text="@string/description_sure_exit_game"
                 android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_15sp" />
+                android:textSize="@dimen/text_size_16sp" />
         </LinearLayout>
 
         <LinearLayout

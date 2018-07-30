@@ -28,7 +28,7 @@
             android:gravity="center"
             android:text="@string/label_achievement_one"
             android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/text_size_15sp"
+            android:textSize="@dimen/text_size_16sp"
             android:drawableBottom="@drawable/y_b3"
             android:drawablePadding="@dimen/padding_2dp"
             />

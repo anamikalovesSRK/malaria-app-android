@@ -191,8 +191,6 @@ public class FirstAnalyticFragment extends Fragment {
         DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
         String  lastTaken= sqLite.getLastTaken();
       checkMediLastTakenTime.setText(lastTaken);
-        Log.d("LastTaken-------------------------: ",lastTaken);
-
     }
 
     public void addDialog()

@@ -64,7 +64,7 @@ public class TripAlarmReceiver extends WakefulBroadcastReceiver {
 
         startWakefulService(context, (intent.setComponent(comp)));
         setResultCode(Activity.RESULT_OK);
-
+        //Todo incorrect wakelock usage, check it
         wakeLock.release();
 
         Log.d("TripAlarmReceiver","Set the service");

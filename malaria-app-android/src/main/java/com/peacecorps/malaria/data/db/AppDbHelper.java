@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import static com.peacecorps.malaria.utils.CalendarFunction.getDateObject;
 import static com.peacecorps.malaria.utils.CalendarFunction.getHumanDateFormat;
@@ -251,7 +252,7 @@ public class AppDbHelper implements DbHelper {
             @Override
             public void run() {
                 String timeStamp = userMedicineDao.getFirstTimeTimeStamp();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                 Date comp_date = Calendar.getInstance().getTime();
                 try {
                     comp_date = sdf.parse(timeStamp);
@@ -541,7 +542,7 @@ public class AppDbHelper implements DbHelper {
                 List<String> timeStampList = userMedicineDao.getLastTaken("yes");
                 int count = 0;
                 for (String time : timeStampList) {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                     Date curr = Calendar.getInstance().getTime();
                     try {
                         curr = sdf.parse(time);

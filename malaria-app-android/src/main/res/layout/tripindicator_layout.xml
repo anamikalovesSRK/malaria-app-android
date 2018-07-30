@@ -96,7 +96,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
 
     </LinearLayout>
@@ -186,7 +186,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -212,7 +212,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
     </LinearLayout>
 
@@ -280,7 +280,7 @@
                 android:onClick="onClick"
                 android:padding="@dimen/padding_5dp"
                 android:textColor="@color/cream"
-                android:textSize="@dimen/text_size_15sp"
+                android:textSize="@dimen/text_size_16sp"
 
                 />
 
@@ -318,12 +318,11 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:hint="Trip Time"
-            android:onClick="showTimePickerDialogDeparture"
             android:paddingBottom="@dimen/padding_5dp"
             android:paddingLeft="@dimen/padding_5dp"
             android:paddingTop="@dimen/padding_10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_16sp" />
 
 
     </LinearLayout>

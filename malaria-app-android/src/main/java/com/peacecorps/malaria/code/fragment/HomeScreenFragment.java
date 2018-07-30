@@ -43,7 +43,7 @@ public class HomeScreenFragment extends Fragment {
     private Button mRemainderToneButton;
     private TextView mCurrentDateLabel;
     private TextView mCurrentDayOfweekLabel;
-    private LinearLayout warningView;
+    private TextView warningView;
     private static CharSequence mGetCurrentDate;
     private static int mDrugAcceptedCount;
     private static int drugRejectedCount;
@@ -187,19 +187,19 @@ public class HomeScreenFragment extends Fragment {
     public void createView() {
 
         mAcceptMedicationButton = (Button) rootView
-                .findViewById(R.id.fragment_home_screen_accept_medication_button);
+                .findViewById(R.id.btn_accept_medication);
         mRejectMedicationButton = (Button) rootView
-                .findViewById(R.id.fragment_home_screen__reject_medication_button);
+                .findViewById(R.id.btn_reject_medication);
         mSettingsButton = (Button) rootView
                 .findViewById(R.id.fragment_home_screen_settings_button);
         mRemainderToneButton=(Button) rootView
                 .findViewById(R.id.fragment_home_screen_set_tone_button);
         mCurrentDateLabel = (TextView) rootView
-                .findViewById(R.id.fragment_home_screen_current_date);
+                .findViewById(R.id.tv_current_date);
         mCurrentDayOfweekLabel = (TextView) rootView
-                .findViewById(R.id.fragment_home_screen_current_day_of_week);
+                .findViewById(R.id.tv_day_of_week);
         //yatna
-        warningView=(LinearLayout)rootView
+        warningView= rootView
                 .findViewById(R.id.warningView);
         sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getActivity());
         //get the limit set by user from shared preference

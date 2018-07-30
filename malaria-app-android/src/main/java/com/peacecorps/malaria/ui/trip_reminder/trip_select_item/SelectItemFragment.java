@@ -22,7 +22,7 @@ public class SelectItemFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.trip_indicator_packing_dialog, container, false);
+        View view = inflater.inflate(R.layout.fragment_select_trip_item, container, false);
         ButterKnife.bind(this, view);
         return view;
     }

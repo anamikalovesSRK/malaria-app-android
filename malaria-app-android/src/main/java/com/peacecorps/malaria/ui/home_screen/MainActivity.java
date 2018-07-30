@@ -19,6 +19,7 @@ import com.peacecorps.malaria.code.fragment.HomeScreenFragment;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.ui.base.BaseActivity;
 import com.peacecorps.malaria.ui.home_screen.HomeContract.IHomeView;
+import com.peacecorps.malaria.ui.info_hub.InfoHubFragment;
 import com.peacecorps.malaria.ui.play.PlayFragment.OnPlayFragmentListener;
 import com.peacecorps.malaria.ui.play.PlayFragment;
 import com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenFragment;
@@ -102,7 +103,8 @@ public class MainActivity extends BaseActivity implements IHomeView, OnUserFragm
                         break;
 
                     case R.id.bnv_info_button:
-                        Toast.makeText(MainActivity.this, "info button", Toast.LENGTH_SHORT).show();
+                        fragment = new InfoHubFragment();
+                        loadFragment(fragment);
                         break;
 
                     case R.id.bnv_play_button:

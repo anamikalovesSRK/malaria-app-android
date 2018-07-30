@@ -35,6 +35,7 @@ public class AlarmHandlerClass extends BroadcastReceiver {
 
         /**Shows the notification with Taken, Snooze and Not Taken Button**/
         new DrugReminderNotification(context);
+        //Todo incorrect wakelock usage
         wakeLock.release();
     }
 

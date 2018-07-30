@@ -201,7 +201,7 @@ public class TripIndicatorPackingActivity extends Activity {
                 try {
                     cashV = Integer.parseInt(cash.getText().toString());
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), "Enter Integral Value of Cash!", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "Enter Integral Value of Cash!", Toast.LENGTH_SHORT).show();
                 }
 
 

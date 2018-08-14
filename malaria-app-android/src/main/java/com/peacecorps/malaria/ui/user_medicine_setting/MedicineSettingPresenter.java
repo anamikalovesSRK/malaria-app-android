@@ -1,11 +1,14 @@
 package com.peacecorps.malaria.ui.user_medicine_setting;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.data.db.entities.AlarmTime;
+import com.peacecorps.malaria.notifications.service.AlarmService;
 import com.peacecorps.malaria.ui.base.BasePresenter;
+import com.peacecorps.malaria.utils.ToastLogSnackBarUtil;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -50,25 +53,25 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         int checkDay = calendar.get(Calendar.DAY_OF_WEEK);
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
-
+        ToastLogSnackBarUtil.showDebugLog("day "+ checkDay + "month " + month + "year " + year + " " + hour + " " + minute );
         // inserted the alarm timing and days
         getDataManager().insertAlarmData(new AlarmTime(hour, minute, month, year, checkDay));
 
         switch (mDrugPicked) {
             case 0:
-                getDataManager().setDoesWeekly(false);
+                getDataManager().setDoseWeekly(false);
                 getDataManager().setDrugPicked(getContext().getString(R.string.med_option_one));
                 break;
             case 1:
-                getDataManager().setDoesWeekly(false);
+                getDataManager().setDoseWeekly(false);
                 getDataManager().setDrugPicked(getContext().getString(R.string.med_option_two));
                 break;
             case 2:
-                getDataManager().setDoesWeekly(true);
+                getDataManager().setDoseWeekly(true);
                 getDataManager().setDrugPicked(getContext().getString(R.string.med_option_three));
                 break;
             default:
-                getDataManager().setDoesWeekly(false);
+                getDataManager().setDoseWeekly(false);
                 getDataManager().setDrugPicked(getContext().getString(R.string.med_option_one));
         }
         if (getDataManager().isFirstRun()) {
@@ -77,9 +80,8 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         }
         getDataManager().setDrugTaken(false);
         getDataManager().setUserPreferences(true);
-        //Todo IMP start a alarm service
-//        mFragmentContext.startService(new Intent(mFragmentContext,
-//                AlarmService.class));
+        // starting alarm service for reminding user for medicine
+        getContext().startService(new Intent(getContext(), AlarmService.class));
     }
 
     /**
@@ -88,18 +90,21 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
      */
     @Override
     public void convertToTwelveHours(int hr, int mins) {
+        ToastLogSnackBarUtil.showDebugLog("" + hr + mins);
         String timeSet;
         int hour = 0;
         if (hr > 12) {
-            hour -= 12;
+            hour = hr -12;
             timeSet = "PM";
         } else if (hr == 0) {
             hour += 12;
             timeSet = "AM";
         } else if (hr == 12) {
             timeSet = "PM";
+            hour = hr;
         } else {
             timeSet = "AM";
+            hour = hr;
         }
 
         String minutes;
@@ -112,6 +117,6 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         String theTime = getContext().getResources().getString(R.string.time_picker, hour, minutes, timeSet);
 
         getView().setSelectedTime(theTime);
-        getView().enableDoneButton();
+        getView().enableDoneButton(hr, mins);
     }
 }

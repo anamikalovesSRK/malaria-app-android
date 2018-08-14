@@ -14,19 +14,17 @@ public interface PreferencesHelper {
     int getDrugAcceptedCount();
     void setDrugAcceptedCount(int value);
     boolean isDosesWeekly();
-    void setDoesWeekly(boolean value);
+    void setDoseWeekly(boolean value);
     int checkDosesDaily();
+    int getDayWeekly();
     void setDosesDaily(int value);
+    void setDayWeekly(int value);
     int checkDosesWeekly();
     void setDosesWeekly(int value);
     int getMedicineStoreValue();
     void setMedicineStoreValue(int value);
     String getMedicineLastTakenTime();
     void setMedicineLastTakenTime(String time);
-    boolean getMythFactGame();
-    void setMythFactGame(boolean val);
-    boolean getRapidFireGame();
-    void setRapidFireGame(boolean val);
     String getToneUri();
     void setToneUri(String uri);
     String getTripDate();
@@ -47,5 +45,18 @@ public interface PreferencesHelper {
     void setAlertNumberDaysOrWeeks(int value);
     String getReminderMessageForTrip();
     void setReminderMessageForTrip(String messageForTrip);
-
+    void setLongWeeklyDate(long value);
+    long getLongWeeklyDate();
+    void setDateDrugTaken(long value);
+    long getDateDrug();
+    void setWeeklyDrugTaken(boolean value);
+    boolean isWeeklyDrugTaken();
+    void setDailyDrugTaken(boolean value);
+    boolean isDailyDrugTaken();
+    int getDrugRejectedCount();
+    void setDrugRejectedCount(int value);
+    boolean checkRapidFireTarget();
+    void setRapidFireTarget(boolean value);
+    boolean checkMythFactTarget();
+    void setMythFactTarget(boolean value);
 }

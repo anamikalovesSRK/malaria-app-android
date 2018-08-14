@@ -24,7 +24,7 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void setUserMedicineSelection(int drug, String choice, Date date, String status, Double percentage) {
+    public void setUserMedicineSelection(String drug, String choice, Date date, String status, Double percentage) {
         dbHelper.setUserMedicineSelection(drug, choice, date, status, percentage);
     }
 
@@ -44,7 +44,7 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void insertOrUpdateMissedMedicationEntry(int drug, String ch, int date, int month, int year, double percentage) {
+    public void insertOrUpdateMissedMedicationEntry(String drug, String ch, int date, int month, int year, double percentage) {
         dbHelper.insertOrUpdateMissedMedicationEntry(drug, ch, date, month, year, percentage);
     }
 
@@ -54,18 +54,23 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void getFirstTimeTimeStamp(LoadLongCallback callback) {
-        dbHelper.getFirstTimeTimeStamp(callback);
+    public void getFirstTimeByTimeStamp(LoadLongCallback callback) {
+        dbHelper.getFirstTimeByTimeStamp(callback);
     }
 
     @Override
-    public void getStatus(int date, int month, int year, LoadStringCallback callback) {
-        dbHelper.getStatus(date, month, year, callback);
+    public void getDailyStatus(int date, int month, int year, LoadStringCallback callback) {
+        dbHelper.getDailyStatus(date, month, year, callback);
     }
 
     @Override
     public void getDosesInaRowWeekly(LoadIntegerCallback callback) {
         dbHelper.getDosesInaRowWeekly(callback);
+    }
+
+    @Override
+    public void getDosesInaRowDaily(LoadIntegerCallback callback) {
+        dbHelper.getDosesInaRowDaily(callback);
     }
 
     @Override
@@ -154,6 +159,11 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public void updateAlarmTime(int hour, int min) {
+        dbHelper.updateAlarmTime(hour, min);
+    }
+
+    @Override
     public boolean hasUserSetPreferences() {
         return preferencesHelper.hasUserSetPreferences();
     }
@@ -219,8 +229,8 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void setDoesWeekly(boolean value) {
-        preferencesHelper.setDoesWeekly(value);
+    public void setDoseWeekly(boolean value) {
+        preferencesHelper.setDoseWeekly(value);
     }
 
     @Override
@@ -229,8 +239,18 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public int getDayWeekly() {
+        return preferencesHelper.getDayWeekly();
+    }
+
+    @Override
     public void setDosesDaily(int value) {
         preferencesHelper.setDosesDaily(value);
+    }
+
+    @Override
+    public void setDayWeekly(int value) {
+        preferencesHelper.setDayWeekly(value);
     }
 
     @Override
@@ -261,26 +281,6 @@ public class AppDataManager implements DataManager {
     @Override
     public void setMedicineLastTakenTime(String time) {
         preferencesHelper.setMedicineLastTakenTime(time);
-    }
-
-    @Override
-    public boolean getMythFactGame() {
-        return preferencesHelper.getMythFactGame();
-    }
-
-    @Override
-    public void setMythFactGame(boolean val) {
-        preferencesHelper.setMythFactGame(val);
-    }
-
-    @Override
-    public boolean getRapidFireGame() {
-        return preferencesHelper.getRapidFireGame();
-    }
-
-    @Override
-    public void setRapidFireGame(boolean val) {
-        preferencesHelper.setRapidFireGame(val);
     }
 
     @Override
@@ -381,5 +381,75 @@ public class AppDataManager implements DataManager {
     @Override
     public void setReminderMessageForTrip(String messageForTrip) {
         preferencesHelper.setReminderMessageForTrip(messageForTrip);
+    }
+
+    @Override
+    public void setLongWeeklyDate(long value) {
+        preferencesHelper.setLongWeeklyDate(value);
+    }
+
+    @Override
+    public long getLongWeeklyDate() {
+        return preferencesHelper.getLongWeeklyDate();
+    }
+
+    @Override
+    public void setDateDrugTaken(long value) {
+        preferencesHelper.setDateDrugTaken(value);
+    }
+
+    @Override
+    public long getDateDrug() {
+        return preferencesHelper.getDateDrug();
+    }
+
+    @Override
+    public void setWeeklyDrugTaken(boolean value) {
+        preferencesHelper.setWeeklyDrugTaken(value);
+    }
+
+    @Override
+    public boolean isWeeklyDrugTaken() {
+        return preferencesHelper.isWeeklyDrugTaken();
+    }
+
+    @Override
+    public void setDailyDrugTaken(boolean value) {
+        preferencesHelper.setDailyDrugTaken(value);
+    }
+
+    @Override
+    public boolean isDailyDrugTaken() {
+        return preferencesHelper.isDailyDrugTaken();
+    }
+
+    @Override
+    public int getDrugRejectedCount() {
+        return preferencesHelper.getDrugRejectedCount();
+    }
+
+    @Override
+    public void setDrugRejectedCount(int value) {
+        preferencesHelper.setDrugRejectedCount(value);
+    }
+
+    @Override
+    public boolean checkRapidFireTarget() {
+        return preferencesHelper.checkRapidFireTarget();
+    }
+
+    @Override
+    public void setRapidFireTarget(boolean value) {
+        preferencesHelper.setRapidFireTarget(value);
+    }
+
+    @Override
+    public boolean checkMythFactTarget() {
+        return preferencesHelper.checkMythFactTarget();
+    }
+
+    @Override
+    public void setMythFactTarget(boolean value) {
+        preferencesHelper.setMythFactTarget(value);
     }
 }
